@@ -5,7 +5,7 @@ class Sneaker(models.Model):
     title = models.CharField(max_length=255, verbose_name="Название")
     brand = models.CharField(max_length=100, verbose_name="Бренд")
     sizes = models.JSONField(default=list, verbose_name="Доступные размеры")
-    color = models.CharField(max_length=50, blank=True, null=True, verbose_name="Цвет")
+    gallery = models.JSONField(default=list, blank=True, verbose_name="Галерея изображений")
     description = models.TextField(blank=True, null=True, verbose_name="Описание")
     image = models.ImageField(upload_to='sneakers/', verbose_name="Картинка")
     price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
